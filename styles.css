@@ -1,118 +1,224 @@
 @import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;800;900&display=swap);
 
+:root {
+  --clr-dark_blue: #1f2937;
+  --clr-light_blue: #3882f6;
+  --clr-primary-white: #f9faf8;
+  --clr-secondary-white: #e5e7eb;
 
+  --font-family: "Roboto", sans-serif;
+
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --fs-xs-18: 18px;
+  --fs-sm-24: 24px;
+  --fs-lg-36: 36px;
+  --fs-xl-48: 48px;
+
+  --bd-card-radius: 15px;
+
+  --max-width: 70%;
+}
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-family);
+}
+html {
+  color: var(--clr-primary-white);
+  font-weight: var(--fw-light);
+}
+.wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.wrapper--narrow {
+  max-width: calc(var(--max-width) - 20%);
+  margin: 0 auto;
 }
 
-:root{
-    --clr-dark_blue: #1f2937;
-    --clr-light_blue: #3882f6;
-    --clr-primary-white: #f9faf8;
-    --clr-secondary-white: #e5e7eb;
-
-    --fw-light: 300;
-    --fw-bold: 700;
-    --fw-black: 900;
+header {
+  background-color: var(--clr-dark_blue);
 }
-
-html{
-    color: var(--clr-primary-white);
-    font-size: var(--fw-light);
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding-block: 1rem 4rem;
+  gap: 5rem;
+  & a {
+    color: var(--clr-secondary-white);
+    text-decoration: none;
+  }
 }
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-/* 
-    /** 
-*/
-.wrapper-narrow{
-    max-width: 70%;
-    margin: 0 auto;
-}
+  .header__logo {
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-sm-24);
+  }
 
-header{
-    background-color: var(--clr-dark_blue);
-}
-.hero{
-    padding: 1rem;
-    & a{
-        color: var(--clr-seconday-white);
-        text-decoration: none;
-    }
-}
-
-
-
-
-.header__content{
+  & .header__nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 3rem;
-    .header__logo{
-        font-weight: bold;
-        font-size: 24px;
-    }
-
-    & .header__nav{
-        display: flex;
-        gap: 1.5rem;
-        font-weight: var(--fw-light);
-    }
+    gap: 1.5rem;
+  }
+}
+.hero__content {
+  display: flex;
+  gap: 2rem;
+}
+.hero__text,
+.hero__img {
+  flex: 1;
+  min-height: 150px;
+}
+.hero__text {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  h1 {
+    font-size: var(--fs-xl-48);
+    font-weight: var(--fw-black);
+  }
+  p {
+    font-weight: var(--fw-light);
+  }
 }
 
-.hero__content{
+.hero__img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-secondary-white);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+main {
+  color: var(--clr-dark_blue);
+}
+
+.first__article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-block: 3rem;
+  gap: 1rem;
+  & h2 {
+    font-weight: var(--fw-black);
+    font-size: var(--fs-lg-36);
+  }
+}
+
+.cards {
+  display: flex;
+  max-width: 600px;
+  gap: 2rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  border-radius: var(--bd-card-radius);
+}
+
+.card__img {
+  border: 3px solid var(--clr-light_blue);
+  border-radius: 0.7em;
+  min-height: 120px;
+  min-width: 100px;
+}
+
+.card__text {
+  text-align: center;
+  font-size: var(--fs-xs-18);
+}
+
+.second__section {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-secondary-white);
+  color: var(--clr-dark_blue);
+  padding: 3rem;
+  font-size: var(--fs-lg-36);
+  font-style: italic;
+  .second__article {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
-    margin-bottom: 7rem;
+  }
+  & h3 {
+    text-align: end;
+    font-weight: var(--fw-bold);
+  }
 }
 
-    .hero__text, .hero__img{
-        flex: 1;
-        height: 200px;
-    }
+.third__section {
+  padding: 3rem;
+  color: var(--clr-primary-white);
+}
+.action__call {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 3rem;
+  background-color: var(--clr-light_blue);
+  border-radius: calc(var(--bd-card-radius) - 0.5rem);
+  & h2 {
+    font-size: normal;
+    font-weight: var(--fw-bold);
+  }
+}
 
-    .hero__text{
-        gap: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        h1{
-            font-size: 48px;
-            font-weight: var(--fw-black);
-        }
-        p{
-            font-weight: var(--fw-light);
-        }
-            
-    }
+footer {
+  background-color: var(--clr-dark_blue);
+  padding: 1rem;
+  text-align: center;
+  color: var(--clr-primary-white);
+  font-size: 14px;
+}
 
-    .css-button-sharp--sky {
-        width: 100px;
-        height: 40px;
-        color: #fff;
-        padding: 5px 10px;
-        border-radius: 0.3rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        position: relative;
-        display: inline-block;
-        outline: none;
-        border: 2px solid var(--clr-light_blue);
-        background: var(--clr-light_blue);
-      }
-      .css-button-sharp--sky:hover {
-        background: #fff;
-        color: var(--clr-light_blue);
-      }
-
-    .hero__img{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--clr-secondary-white);
-        background-color: rgba(255,255,255, 0.3);
-    }
-
-
+.css-button-sharp--sky {
+  width: 100px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 0.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border: 2px solid var(--clr-light_blue);
+  background: var(--clr-light_blue);
+}
+.css-button-sharp--sky:hover {
+  background: #fff;
+  color: var(--clr-light_blue);
+}
+.css-button-sharp--sky-mod {
+  width: 100px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 0.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border: 2px solid white;
+  background: var(--clr-light_blue);
+}
+.css-button-sharp--sky-mod:hover {
+  background: #fff;
+  color: var(--clr-light_blue);
+}
