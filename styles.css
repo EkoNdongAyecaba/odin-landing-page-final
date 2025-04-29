@@ -1,0 +1,118 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;800;900&display=swap);
+
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+:root{
+    --clr-dark_blue: #1f2937;
+    --clr-light_blue: #3882f6;
+    --clr-primary-white: #f9faf8;
+    --clr-secondary-white: #e5e7eb;
+
+    --fw-light: 300;
+    --fw-bold: 700;
+    --fw-black: 900;
+}
+
+html{
+    color: var(--clr-primary-white);
+    font-size: var(--fw-light);
+}
+
+/* 
+    /** 
+*/
+.wrapper-narrow{
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+header{
+    background-color: var(--clr-dark_blue);
+}
+.hero{
+    padding: 1rem;
+    & a{
+        color: var(--clr-seconday-white);
+        text-decoration: none;
+    }
+}
+
+
+
+
+.header__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    .header__logo{
+        font-weight: bold;
+        font-size: 24px;
+    }
+
+    & .header__nav{
+        display: flex;
+        gap: 1.5rem;
+        font-weight: var(--fw-light);
+    }
+}
+
+.hero__content{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 7rem;
+}
+
+    .hero__text, .hero__img{
+        flex: 1;
+        height: 200px;
+    }
+
+    .hero__text{
+        gap: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        h1{
+            font-size: 48px;
+            font-weight: var(--fw-black);
+        }
+        p{
+            font-weight: var(--fw-light);
+        }
+            
+    }
+
+    .css-button-sharp--sky {
+        width: 100px;
+        height: 40px;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 0.3rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+        outline: none;
+        border: 2px solid var(--clr-light_blue);
+        background: var(--clr-light_blue);
+      }
+      .css-button-sharp--sky:hover {
+        background: #fff;
+        color: var(--clr-light_blue);
+      }
+
+    .hero__img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--clr-secondary-white);
+        background-color: rgba(255,255,255, 0.3);
+    }
+
+
